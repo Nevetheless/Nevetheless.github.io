@@ -1,0 +1,154 @@
+{
+    "asset": {
+        "version": "2.0"
+    },
+    "scene": 0,
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "children": [
+                1,
+                2
+            ],
+            "matrix": [
+                0.001,
+                0,
+                0,
+                0,
+                0,
+                0.001,
+                0,
+                0,
+                0,
+                0,
+                0.001,
+                0,
+                0,
+                0,
+                0,
+                1
+            ],
+            "name": "New-test4",
+            "extras": {
+                "Dtk_PrototypeID": 1
+            }
+        },
+        {
+            "mesh": 0,
+            "name": "Mesh"
+        },
+        {
+            "name": "Mesh"
+        }
+    ],
+    "meshes": [
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 1
+                    },
+                    "indices": 0,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 1428,
+            "max": [
+                487
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 488,
+            "max": [
+                36.5,
+                23,
+                14.75
+            ],
+            "min": [
+                0,
+                -1.310063169e-13,
+                -14.75
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 5856,
+            "componentType": 5126,
+            "count": 488,
+            "max": [
+                1,
+                1,
+                1
+            ],
+            "min": [
+                -1,
+                -1,
+                -1
+            ],
+            "type": "VEC3"
+        }
+    ],
+    "materials": [
+        {
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.2745098039,
+                    0.431372549,
+                    1,
+                    0.6980392157
+                ],
+                "metallicFactor": 0,
+                "roughnessFactor": 1
+            },
+            "doubleSided": true,
+            "alphaMode": "BLEND",
+            "extras": {
+                "Dtk_ColorId": 3
+            }
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 2856,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2856,
+            "byteLength": 11712,
+            "byteStride": 12,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 14568,
+            "uri": "New-test4.bin"
+        }
+    ]
+}

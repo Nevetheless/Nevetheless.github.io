@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <script src="aframe-master.min.js"></script>
+  <script src="aframe-ar-nft.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="render.css">  
+  </head>
+
+  <body style="margin: 0px; overflow: hidden;">
+    <div class="arjs-loader">
+      <div>Loading, please wait...</div>
+    </div>
+    <!--创建场景-->
+    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+      
+      <!--image tracking-->
+      <a-nft type="nft" url="./dd/New-test4" smooth="true" smoothCount="5" smoothTolerance=".01"
+        smoothThreshold="2">
+
+        <!-- 这里是一个模型实体，gltf-model是模型的地址，在官方示例中这里同样使用了cors代理避免跨域问题，作者在这里并没有进行更改 -->
+        <!-- position: x z y x越小越往左 z越小越往下 y越小越往上-->
+        <!-- rotation: y z x 分别绕y z x旋转-->
+      <a-entity 
+        id="en1" 
+        gltf-model="model/New-test4/New-test4.gltf" 
+        scale="2700 2700 2700" 
+        position="50 -1000 -230" 
+        rotation="90 90 -90">
+      </a-entity>
+
+      <a-entity 
+        id="en2" 
+        gltf-model="model/New-test4/New-test4.gltf" 
+        scale="2700 2700 2700" 
+        position="180 -1000 -220" 
+        rotation="180 -90 90">
+      </a-entity>
+
+      <a-entity 
+        id="en3" 
+        gltf-model="model/New-test4/New-test4.gltf" 
+        scale="2700 2700 2700" 
+        position="50 -1000 -125" 
+        rotation="180 180 180">
+      </a-entity>
+
+      </a-nft>
+      <a-entity camera></a-entity>
+
+    </a-scene>
+
+    <button type="button" id="font">主视图</button> 
+    <button type="button" id="left">侧视图</button>
+    <button type="button" id="top">俯视图</button>
+
+  </body>
+  <script>
+    // position: x z y x越小越往左 z越小越往下 y越小越往上
+    // rotation: y z x 分别绕y z x旋转
+    var fflag=false, lflag=false, rflag=false;
+    document.getElementById("font").addEventListener("touchstart", function () {
+      fflag = ~fflag;
+      let el = document.getElementById("en1");
+      if(fflag) {
+        el.setAttribute('position', {x: 140, y: 0, z: -270});
+      } else {
+        el.setAttribute('position', {x: 50, y: -1000, z: -210});
+      }
+    })
+    document.getElementById("left").addEventListener("touchstart", function () {
+      lflag = ~lflag;
+      let el = document.getElementById("en2");
+      if(lflag) {
+        el.setAttribute('position', {x: 220, y:  0, z: -280});
+      } else {
+        el.setAttribute('position', {x: 180, y: -1000, z: -210});
+      }
+    })
+    document.getElementById("top").addEventListener("touchstart", function () {
+      rflag = ~rflag;
+      let el = document.getElementById("en3");
+      if(rflag) {
+        el.setAttribute('position', {x: 45, y: 0, z: -190});
+      } else {
+        el.setAttribute('position', {x: 50, y: -1000, z: -120});
+      }
+    })
+  </script>
+
+</html>
